@@ -5,7 +5,7 @@ import { AllowanceDto } from "../dto/allowance.dto"
 
 @Injectable()
 export class ContractReadService {
-  allowance(address: string, query: AllowanceDto) {
+  allowance(address: `0x${string}`, query: AllowanceDto) {
     return viemClient.readContract({
       abi: erc20ABI,
       address: address as `0x${string}`,
@@ -14,43 +14,43 @@ export class ContractReadService {
     })
   }
 
-  balanceOf(address: string, account: string) {
+  balanceOf(address: `0x${string}`, account: `0x${string}`) {
     return viemClient.readContract({
       abi: erc20ABI,
-      address: address as `0x${string}`,
+      address: address,
       functionName: "balanceOf",
       args: [account],
     })
   }
 
-  decimals(address: string) {
+  decimals(address: `0x${string}`) {
     return viemClient.readContract({
       abi: erc20ABI,
-      address: address as `0x${string}`,
+      address: address,
       functionName: "decimals",
     })
   }
 
-  name(address: string) {
+  name(address: `0x${string}`) {
     return viemClient.readContract({
       abi: erc20ABI,
-      address: address as `0x${string}`,
+      address: address,
       functionName: "name",
     })
   }
 
-  symbol(address: string) {
+  symbol(address: `0x${string}`) {
     return viemClient.readContract({
       abi: erc20ABI,
-      address: address as `0x${string}`,
+      address: address,
       functionName: "symbol",
     })
   }
 
-  totalSupply(address: string) {
+  totalSupply(address: `0x${string}`) {
     return viemClient.readContract({
       abi: erc20ABI,
-      address: address as `0x${string}`,
+      address: address,
       functionName: "totalSupply",
     })
   }
